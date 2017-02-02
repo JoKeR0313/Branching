@@ -11,7 +11,7 @@ class CodecoolClass:
         self.mentors = []
         self.students = []
         # Create colors
-        self.BOLD_RED = "\033[1;91m"
+        self.GREEN = "\033[1;91m"
         self.END_TAG = "\033[00m"
 
     @classmethod
@@ -25,15 +25,6 @@ class CodecoolClass:
 # find a student by a given full name, if he/she/it is not in the data
 # base then prints an error message
 
-    def find_student_by_full_name(self, name):
-        for i in range(len(self.students)):
-            full_name = self.students[i].first_name + \
-                " " + self.students[i].last_name
-            if full_name == name:
-                chosen_student = self.students[i]
-                return chosen_student
-        print("\n" + self.BOLD_RED + "%s is not in the database." % name + self.END_TAG, "", end="")
-        return "nope"
 # find a mentor by a given full name, if he/she is not in the database
 # then prints an error message
 
@@ -44,5 +35,5 @@ class CodecoolClass:
             if full_name == name:
                 chosen_mentor = self.mentors[i]
                 return chosen_mentor
-        print("\n" + self.BOLD_RED + "%s is not in the database." % name + self.END_TAG, "", end="")
+        print("\n" + self.GREEN + "%s is not in the database." % name + self.END_TAG, "", end="")
         return "nope"
